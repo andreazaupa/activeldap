@@ -29,7 +29,6 @@ module ActiveLdap
         @entry_attributes = {}
         @configuration = configuration.dup
         @logger = @configuration.delete(:logger)
-        @configuration.assert_valid_keys(VALID_ADAPTER_CONFIGURATION_KEYS)
         VALID_ADAPTER_CONFIGURATION_KEYS.each do |name|
           instance_variable_set("@#{name}", configuration[name])
         end
